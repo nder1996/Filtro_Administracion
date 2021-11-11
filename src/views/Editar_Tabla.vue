@@ -1,0 +1,81 @@
+<template>
+    <div class="Principal_Editar">
+            <v-card class="mx-auto" >
+                <v-card-title class="text-h6 font-weight-regular justify-space-between">
+                    <span>{{ currentTitle }}</span>
+                    <v-avatar color="primary lighten-2" class="subheading white--text" size="24" v-text="step"></v-avatar>
+                </v-card-title>
+                <v-window v-model="step">
+                    <v-window-item :value="1">
+                        <v-card-text>
+                            <div>
+                                <br>
+                                <v-select :items="items" label="Escoge Una Tabla" dense outlined></v-select> <br>
+                                <v-text-field prepend-icon="mdi-file-table-outline" label="Nombre Tabla"></v-text-field>
+                            </div>
+                        </v-card-text>
+                    </v-window-item>
+                    <v-window-item :value="2">
+                        <v-card-text>
+                            <div class="CRUD_FILTRO">
+                                
+                                <CrudClientes :adminVerification="false" :idHoja="0"></CrudClientes>
+                                
+                            </div>
+                        </v-card-text>
+                    </v-window-item>
+                    <v-window-item :value="3">
+                    <h1 class="text-center mt-3 mb-3">HAS USADO LA OPCION DE EDITAR</h1>
+                    </v-window-item>
+                </v-window>
+                <v-divider></v-divider>
+                <v-card-actions>
+                    <v-btn :disabled="step === 1" text @click="step--">
+                        Back
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                    <v-btn :disabled="step === 3" color="primary" depressed @click="step++">
+                        Next
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
+    </div>
+</template>
+<style scoped>
+.Principal_Editar {
+  /*  border: 5px solid yellow;*/
+    width: 100%;
+    height: 100%;
+}
+.CRUD_FILTRO{
+  /*  border: 5px solid red;*/
+    width: 100% !important;
+}
+</style>
+<script>
+import CrudClientes from "../components/CrudClientes.vue"
+import elegir_tabla from "../components/Elegir_Tabla.vue"
+export default {
+	    components: {
+        CrudClientes,
+        elegir_tabla
+
+    },
+    data: () => ({
+        step: 1,
+    }),
+
+    computed: {
+        currentTitle() {
+            switch (this.step) {
+                case 1:
+                    return 'Sign-up'
+                case 2:
+                    return 'Create a password'
+                default:
+                    return 'Account created'
+            }
+        },
+    },
+}
+</script>
