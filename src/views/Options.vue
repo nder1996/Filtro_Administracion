@@ -57,7 +57,7 @@ export default {
 }*/
 
 .Opciones {
-    border: 5px solid red;
+   /* border: 5px solid red;*/
     width: 100%;
     overflow: hidden;
 }
@@ -72,7 +72,7 @@ export default {
 
 .ico-buscar,
 .ico-editar,.ico-agregar,.ico-cargar {
-    border: 5px solid red;
+   /* border: 5px solid red;*/
     color: #424242;
     width: 100%;
     padding: 0;
