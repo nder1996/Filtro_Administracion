@@ -1,8 +1,8 @@
 <template>
     <div>
-        <v-card>
+        <v-card class='tarjeta_descarga'>
             <v-card-title class="text-center justify-center py-6">
-                <h1 class="font-weight-bold text-h5 basil--text">
+                <h1 class="font-weight-bold text-h6 black--text">
                     <strong> PUEDES DESCARGAR / CARGAR UN DOCUMENTO EXCEL</strong>
                 </h1>
             </v-card-title>
@@ -11,17 +11,17 @@
                     {{ item }}
                 </v-tab>
             </v-tabs>
-            <v-tabs-items v-model="tab">
-                <v-tab-item v-for="item1 in 1" :key="item1">
-                    <v-card class='Tarjeta' color="grey lighten-5" flat>
+            <v-tabs-items  v-model="tab">
+                <v-tab-item  class='mb-5'  v-for="item1 in 1" :key="item1">
+                    <v-card class='Tarjeta mt-7' color="grey lighten-5" flat>
                      <h4>Puedes Descargar el Archivo Excel</h4>    <br>
                         <v-icon color="teal">
                             mdi-cloud-download
                         </v-icon>
                     </v-card>
                 </v-tab-item>
-                <v-tab-item v-for="item2 in 1" :key="item2">
-                    <v-card class='Tarjeta' color="grey lighten-5" flat>
+                <v-tab-item  class='mb-5' v-for="item2 in 1" :key="item2">
+                    <v-card class='Tarjeta mt-7' color="grey lighten-5" flat>
                         <h4>Sube Tu Archivo</h4>
                         <v-file-input class='input_tarjeta' hide-input truncate-length="10"></v-file-input>
                     </v-card>
@@ -44,6 +44,14 @@
   }
 </script>
 <style type="text/css" scoped>
+
+.tarjeta_descarga{
+  /*  border: 4px solid red;*/
+    width: 60%;
+    margin: auto;
+}
+
+
 /* Helper classes */
 .basil {
     background-color: #FFFBE6 !important;

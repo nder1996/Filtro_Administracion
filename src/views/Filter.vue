@@ -23,11 +23,11 @@
             <v-divider></v-divider>
             <v-card-actions>
                 <v-btn :disabled="step === 1" text @click="step--">
-                    Back
+                    Anterior
                 </v-btn>
                 <v-spacer></v-spacer>
                 <v-btn :disabled="step === 3" color="primary" depressed @click="step++">
-                    Next
+                    Siguiente
                 </v-btn>
             </v-card-actions>
         </v-card>
@@ -44,7 +44,7 @@ import CrudClientes from "../components/CrudClientes.vue"
 export default {
     data: () => ({
         step: 1,
-         items: ['Tabla_1', 'Tabla_2', 'Tabla_3', 'Tabla_4'],
+         items: ['Clientes', 'Tabla_2', 'Tabla_3', 'Tabla_4'],
 
     }),
 
@@ -54,11 +54,11 @@ export default {
         currentTitle() {
             switch (this.step) {
                 case 1:
-                    return 'Sign-up'
+                    return 'Escoge Una Tabla'
                 case 2:
-                    return 'Create a password'
+                    return 'Filtra Los Datos de La Tabla'
                 default:
-                    return 'Account created'
+                    return 'Operacion Realizada'
             }
         },
     },

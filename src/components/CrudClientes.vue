@@ -66,7 +66,7 @@
                 <div class="Tabla_Principal" :style="adminVerification ? '--radius: 280px;' : '--radius: 180px;'">
                     <!-- IMPORTANTE; NO BORRAR-->
                     <!-- esto es la tabla  elevation-1 theme--light :cols="!adminVerification ? '8' : ''"-->
-                    <v-data-table :headers="computedHeaders" :loading="loading" :search="search" height="60vh" fixed-header @current-items="getFiltered" :footer-props="{
+                    <v-data-table :headers="computedHeaders" :loading="loading" :search="search" height="70vh" fixed-header @current-items="getFiltered" :footer-props="{
                         'items-per-page-text': 'usuarios por pagina',
                         'items-per-page-options': [10, 50, 100, 200, -1],
                         }" :options="options" loading-text="Cargando...Porfavor espere" :items="users" sort-by="descripcion" class="Tabla text--center ">
@@ -814,9 +814,10 @@ table tbody tr {
 /* pa que edites las tablas internas */
 .tablatd {
     padding: auto;
-    border: 0.2px solid black;
+    border: 0.2px solid grey !important;
     padding: 15px;
-    height: 60px !important;
+    height: 70px !important;
+
 }
 
 

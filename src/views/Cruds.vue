@@ -8,9 +8,9 @@
             <v-window v-model="step">
                 <v-window-item :value="1">
                     <v-card-text>
-                        <span class="text-caption grey--text text--darken-1">
-                            ESCOGES LA TABLA PARA MODIFICAR
-                        </span>
+                        <v-col style='margin: auto;' cols="6">
+                            <v-select :items="items" label="Escoge Una Tabla" dense outlined></v-select> <br>
+                        </v-col>
                     </v-card-text>
                 </v-window-item>
                 <v-window-item :value="2">
@@ -49,9 +49,11 @@ export default {
     },
     data() {
         /*  step: 1,*/
+
         return {
             step: 1,
             select: { hoja: 'Clientes', idHoja: '0', crud: 'CrudClientes' },
+               items: ['Clientes', 'Tabla_2', 'Tabla_3', 'Tabla_4'],
             hojas: [
                 { hoja: 'Clientes', idHoja: '0', crud: 'CrudClientes' },
                 { hoja: 'Personal', idHoja: '1', crud: 'CrudPersonal' },
@@ -64,11 +66,11 @@ export default {
         currentTitle() {
             switch (this.step) {
                 case 1:
-                    return 'Sign-up'
+                    return 'Escoge Una Tabla'
                 case 2:
-                    return 'Create a password'
+                    return 'Modifica Los Datos De La Tabla'
                 default:
-                    return 'Account created'
+                    return 'Has Modificado La Tabla'
             }
         },
     },

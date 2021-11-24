@@ -4,6 +4,14 @@
         <h2 class="barra"></h2>
         <br>
         <section class="Opciones text-center d-flex justify-center flex-wrap" v-if="$store.getters.token">
+            <router-link class="Enlace" to="/argregararchivo" v-if="$store.getters.token!='conserjeToken'">
+                <v-icon class="ico-agregar">mdi-clipboard-plus</v-icon>
+                <p class="Letra text-center">Agregar Tabla</p>
+            </router-link> <br>
+            <router-link class="Enlace" to="/cargaarchivo">
+                <v-icon class="ico-cargar">mdi-clipboard-flow</v-icon>
+                <p class="Letra text-center">Descargar / Cargar Tabla</p>
+            </router-link> <br>
             <router-link class="Enlace" to="/Cruds" v-if="$store.getters.token!='conserjeToken'">
                 <v-icon class="ico-editar">mdi-clipboard-edit</v-icon>
                 <p class="Letra text-center">Editar</p>
@@ -11,14 +19,6 @@
             <router-link class="Enlace" to="/Filter">
                 <v-icon class="ico-buscar">mdi-clipboard-search</v-icon>
                 <p class="Letra text-center">Filtrar</p>
-            </router-link>
-            <router-link class="Enlace" to="/argregararchivo" v-if="$store.getters.token!='conserjeToken'">
-                <v-icon class="ico-agregar">mdi-clipboard-plus</v-icon>
-                <p class="Letra text-center">Agregar Tabla</p>
-            </router-link>
-            <router-link class="Enlace" to="/cargaarchivo">
-                <v-icon class="ico-cargar">mdi-clipboard-flow</v-icon>
-                <p class="Letra text-center">Descargar / Cargar Tabla</p>
             </router-link>
         </section>
     </v-container>
@@ -57,7 +57,7 @@ export default {
 }*/
 
 .Opciones {
-   /* border: 5px solid red;*/
+    /* border: 5px solid red;*/
     width: 100%;
     overflow: hidden;
 }
@@ -71,8 +71,10 @@ export default {
 
 
 .ico-buscar,
-.ico-editar,.ico-agregar,.ico-cargar {
-   /* border: 5px solid red;*/
+.ico-editar,
+.ico-agregar,
+.ico-cargar {
+    /* border: 5px solid red;*/
     color: #424242;
     width: 100%;
     padding: 0;
@@ -87,4 +89,12 @@ export default {
     padding: 0;
     color: #616161;
 }
+
+.Enlace{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+   /* border: 5px solid red;*/
+}
+
+
 </style>
