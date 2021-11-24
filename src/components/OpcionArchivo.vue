@@ -372,8 +372,8 @@ export default {
     position: relative;
     right: 2%;
    /* border: 5px solid purple !important;*/
-    height: 400px;
-    width: 1400px;
+    height: 600px;
+    width: 1900px !important;
     overflow: scroll;
 }
 

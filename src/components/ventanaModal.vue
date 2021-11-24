@@ -1,8 +1,8 @@
 <template>
     <v-container fluid>
         <!-- ventana modal para crear/editar -->
-        <v-dialog v-model="dialog" max-width="1200px" fullscreen hide-overlay transition="dialog-bottom-transition" persistent>
-            <v-card class="Marco_Editar">
+        <v-dialog class="Marco_Editar" v-model="dialog" max-width="1200px" fullscreen hide-overlay transition="dialog-bottom-transition" persistent>
+            <v-card >
                 <br><br>
                 <v-form class="mt-10" @submit.prevent="submitForm" v-model="valid" lazy-validation ref="form">
                     <v-stepper v-model="e1">
@@ -444,7 +444,11 @@ export default {
 </script>
 <style>
 .Marco_Editar {
-    border: 5px solid red;
+    position: relative;
+    top: 50%;
+   /* border: 5px solid red !important;*/
+   /* overflow: scroll;*/
+   z-index: 1001 !important;
 }
 
 .override-class {

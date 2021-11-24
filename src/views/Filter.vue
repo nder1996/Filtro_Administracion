@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid>
+    <v-container class='Tarjeta_Filtrar' fluid>
         <v-card class="mx-auto">
             <v-card-title class="text-h6 font-weight-regular justify-space-between">
                 <span>{{ currentTitle }}</span>
@@ -8,7 +8,7 @@
             <v-window v-model="step">
                 <v-window-item :value="1">
                     <v-col style='margin: auto;' cols="6">
-                                <v-select  :items="items" label="Escoge Una Tabla" dense outlined></v-select> <br>
+                        <v-select :items="items" label="Escoge Una Tabla" dense outlined></v-select> <br>
                     </v-col>
                 </v-window-item>
                 <v-window-item class='step_tabla' :value="2">
@@ -16,7 +16,10 @@
                 </v-window-item>
                 <v-window-item :value="3">
                     <div class="pa-4 text-center">
-                        <h1>Has Terminado de Filtrar</h1>
+                        <v-icon style='font-size: 12vw;' color='success'>
+                            mdi-check-circle
+                        </v-icon>
+                        <h3>Datos Filtrados</h3>
                     </div>
                 </v-window-item>
             </v-window>
@@ -44,7 +47,7 @@ import CrudClientes from "../components/CrudClientes.vue"
 export default {
     data: () => ({
         step: 1,
-         items: ['Clientes', 'Tabla_2', 'Tabla_3', 'Tabla_4'],
+        items: ['Clientes', 'Tabla_2', 'Tabla_3', 'Tabla_4'],
 
     }),
 
@@ -58,7 +61,7 @@ export default {
                 case 2:
                     return 'Filtra Los Datos de La Tabla'
                 default:
-                    return 'Operacion Realizada'
+                    return 'Operación Realizada'
             }
         },
     },
@@ -71,13 +74,20 @@ export default {
 }
 </script>
 <style scoped>
+
+.Tarjeta_Filtrar{
+  /*  border: 5px solid red !important;
+    overflow: hidden;*/
+}
+
+
 .Hoja-Cliente {
     width: 90%;
     margin-left: 110px;
 }
 
 .step_tabla {
-    border: 5px solid red;
+   /* border: 5px solid red;*/
     width: 100%;
 }
 </style>

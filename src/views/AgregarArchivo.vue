@@ -58,7 +58,7 @@ export default {
                 case 2:
                     return 'Agregue Los Cambios Correspondientes'
                 default:
-                    return 'Guardar Cambios'
+                    return 'Operación Realizada'
             }
         },
     },

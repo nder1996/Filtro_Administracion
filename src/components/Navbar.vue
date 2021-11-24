@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <!-- navbar para la app -->
-        <v-app-bar style="background-color:#37474F !important" app>
+        <v-app-bar class='navbar_p' style="background-color:#37474F !important" app>
             <v-toolbar-title style="color:white !important;font-size:1.1vw" class="text-uppercase grey--text">
                 <span class="">ADMINISTRACIÓN</span>
             </v-toolbar-title>
@@ -138,6 +138,12 @@ export default {
 }
 </script>
 <style scoped>
+
+.navbar_p{
+   /* border: 5px solid red;*/
+    z-index: 1000 !important;
+}
+
 
 .Btn_Navbar{
     color:White !important;

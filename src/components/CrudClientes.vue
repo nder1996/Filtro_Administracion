@@ -4,12 +4,12 @@
         <v-row class="Iconos_Descarga d-flex justify-space-between ">
             <v-col class="Tabs_Descarga d-flex justify-end">
                 <div class="Div_Tabs_Descarga">
-                    <v-expansion-panels >
+                    <v-expansion-panels>
                         <v-expansion-panel>
                             <v-expansion-panel-header disable-icon-rotate>
                                 <template v-slot:default="{ open }">
-                                        <strong style="color:#424242;font-size:15px" class="text-center" v-if="!open" key="0">CLIC AQUÍ PARA VER LAS OPCIONES </strong>
-                                        <strong style="color:#424242;font-size:15px" class="text-center" v-else key="1">OPCIONES DE DESCARGA Y SUBIDA</strong>
+                                    <strong style="color:#424242;font-size:15px" class="text-center" v-if="!open" key="0">CLIC AQUÍ PARA VER LAS OPCIONES </strong>
+                                    <strong style="color:#424242;font-size:15px" class="text-center" v-else key="1">OPCIONES DE DESCARGA Y SUBIDA</strong>
                                 </template>
                                 <!-- <strong style="color:#424242;font-size:15px" class="text-center">OPCIONES DE DESCARGA || HAGA CLIC AQUÍ PARA DESCARGAR</strong> -->
                                 <template v-slot:actions>
@@ -23,7 +23,7 @@
                                     <v-icon>mdi-file-lock</v-icon>&nbsp;
                                 </v-btn>
                                 <!--descarga normal-->
-                                <v-btn class="Btn_Descarga" style="color:#424242" color="#26A69A" @click="descargarExcel()" >
+                                <v-btn class="Btn_Descarga" style="color:#424242" color="#26A69A" @click="descargarExcel()">
                                     <v-icon>mdi-file-excel</v-icon>&nbsp;
                                 </v-btn>
                                 <!--descarga de excel filtrada, necesario para las descargas-->
@@ -66,7 +66,7 @@
                 <div class="Tabla_Principal" :style="adminVerification ? '--radius: 280px;' : '--radius: 180px;'">
                     <!-- IMPORTANTE; NO BORRAR-->
                     <!-- esto es la tabla  elevation-1 theme--light :cols="!adminVerification ? '8' : ''"-->
-                    <v-data-table :headers="computedHeaders" :loading="loading" :search="search" height="70vh" fixed-header @current-items="getFiltered" :footer-props="{
+                    <v-data-table :headers="computedHeaders" :loading="loading" :search="search" height="100vh" fixed-header @current-items="getFiltered" :footer-props="{
                         'items-per-page-text': 'usuarios por pagina',
                         'items-per-page-options': [10, 50, 100, 200, -1],
                         }" :options="options" loading-text="Cargando...Porfavor espere" :items="users" sort-by="descripcion" class="Tabla text--center ">
@@ -413,8 +413,8 @@ export default {
         agregarFilterModal(e) {
             if (JSON.stringify(this.userFiltro) !== JSON.stringify(e)) {
                 this.countFilter = 1
-                if (this.token=='adminToken') this.countFilter = 0
-                if (this.token=='adminToken'&&this.adminVerification) this.countFilter = 1
+                if (this.token == 'adminToken') this.countFilter = 0
+                if (this.token == 'adminToken' && this.adminVerification) this.countFilter = 1
 
 
                 for (let key in e) {
@@ -450,11 +450,11 @@ export default {
             if (!this.isEditing) {
                 if (this.users.length > 0) {
                     this.user.ID = Number(this.users[this.users.length - 1].ID) + 1
-                }else{
-                    this.user.ID=1
+                } else {
+                    this.user.ID = 1
                 }
-                
-                
+
+
                 this.users.push(JSON.parse(JSON.stringify(this.user)))
             } else {
                 let index = this.users.map(function(x) { return x.ID; }).indexOf(this.user.ID)
@@ -579,8 +579,8 @@ export default {
             this.tablaFiltrada = e
         },
         async descargarFiltro() {
-            let array=[{ token: this.token },this.tablaFiltrada]
-            let respuesta = await axios.post('http://localhost:3000/filter',array, { responseType: 'blob' })
+            let array = [{ token: this.token }, this.tablaFiltrada]
+            let respuesta = await axios.post('http://localhost:3000/filter', array, { responseType: 'blob' })
             if (respuesta.data == false) {
                 this.snackbar = true
                 this.mensaje = 'Error Al Descargar El Archivo'
@@ -746,6 +746,12 @@ export default {
 };
 </script>
 <style>
+
+.CRUD-P{
+ /*   border: 5px solid black;*/
+}
+
+
 .Iconos_Descarga {
     padding-left: 25px;
 }
@@ -762,7 +768,7 @@ export default {
     background-color: #78909C !important;
     color: black !important;
     margin: 0;
- padding: 15px 0;
+    padding: 15px 0;
 
 }
 
@@ -823,7 +829,7 @@ table tbody tr {
 
 #principal:hover .row-pointer {
     background: #ECEFF1;
-    ;
+
 }
 
 

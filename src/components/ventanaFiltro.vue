@@ -1,26 +1,26 @@
 <template>
-    <v-container fluid>
+    <v-container class='modal_filtro mt-5' fluid>
         <!-- ventana modal para crear/editar -->
-        <v-dialog v-model="dialog" max-width="1200px" fullscreen hide-overlay transition="dialog-bottom-transition" persistent>
+        <v-dialog class=' mt-5' v-model="dialog" max-width="1200px" fullscreen hide-overlay transition="dialog-bottom-transition" persistent>
             <v-card>
-                <br><br>
+                  <br><br>
                 <v-form class="Marco_Editar mt-10" @submit.prevent="submitForm" v-model="valid" lazy-validation ref="form">
                     <v-stepper v-model="e1">
                         <v-stepper-header>
                             <v-stepper-step :complete="e1 > 1" step="1">
-                                Filtro Numero 1
+                                Filtro Numero N°1
                             </v-stepper-step>
                             <v-divider></v-divider>
                             <v-stepper-step :complete="e1 > 2" step="2">
-                                Filtro Numero 2
+                                Filtro Numero N°2
                             </v-stepper-step>
                             <v-divider></v-divider>
                             <v-stepper-step :complete="e1 > 3" step="3">
-                                Filtro Numero 3
+                                Filtro Numero N°3
                             </v-stepper-step>
                             <v-divider></v-divider>
                             <v-stepper-step step="4">
-                                  Filtro Numero 4
+                                Filtro Numero N°4
                             </v-stepper-step>
                         </v-stepper-header>
                         <v-stepper-items>
@@ -431,8 +431,16 @@ export default {
     /*  border: 5px solid red;*/
 }
 
+.modal_filtro {
+        position: relative;
+    top: 50%;
+    z-index: 1001 !important;
+}
+
+
+
 .step_cuadro {
-    border: 5px solid red;
+    /* border: 5px solid red;*/
     padding: 25px;
 }
 

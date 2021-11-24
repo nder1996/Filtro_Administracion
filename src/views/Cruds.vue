@@ -1,6 +1,6 @@
 <template>
     <v-container class="Marco " fluid>
-        <v-card class="mx-auto">
+        <v-card class="modifica_tabla mx-auto">
             <v-card-title class="text-h6 font-weight-regular justify-space-between">
                 <span>{{ currentTitle }}</span>
                 <v-avatar color="primary lighten-2" class="subheading white--text" size="24" v-text="step"></v-avatar>
@@ -18,22 +18,31 @@
                 </v-window-item>
                 <v-window-item :value="3">
                     <div class="pa-4 text-center">
+
+                  <v-icon style='font-size: 12vw;' color='success'>
+                            mdi-check-circle
+                        </v-icon>
+                        <h3>Datos Modificados</h3>
+
+
+                        <!--
                         <v-img class="mb-4" contain height="128" src="https://cdn.vuetifyjs.com/images/logos/v.svg"></v-img>
                         <h3 class="text-h6 font-weight-light mb-2">
                             Welcome to Vuetify
                         </h3>
                         <span class="text-caption grey--text">Thanks for signing up!</span>
+                        --->
                     </div>
                 </v-window-item>
             </v-window>
             <v-divider></v-divider>
             <v-card-actions>
                 <v-btn :disabled="step === 1" text @click="step--">
-                    Back
+                    Anterior
                 </v-btn>
                 <v-spacer></v-spacer>
                 <v-btn :disabled="step === 3" color="primary" depressed @click="step++">
-                    Next
+                    Siguiente
                 </v-btn>
             </v-card-actions>
         </v-card>
@@ -70,7 +79,7 @@ export default {
                 case 2:
                     return 'Modifica Los Datos De La Tabla'
                 default:
-                    return 'Has Modificado La Tabla'
+                    return 'Operación Realizada'
             }
         },
     },
@@ -82,7 +91,8 @@ export default {
 </script>
 <style scoped>
 .Marco {
-    /*border:5px solid black;*/
+   /* border:5px solid black;
+     overflow: scroll;*/
     padding: 5px;
     width: 95%;
 }
@@ -90,4 +100,12 @@ export default {
 .primary {
     text-align: center;
 }
+
+
+.modifica_tabla{
+  /* overflow: scroll;*/
+   /*height: 800px !important;
+ /*  border: 5px solid red;*/
+}
+
 </style>
