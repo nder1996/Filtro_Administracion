@@ -372,7 +372,7 @@ export default {
     position: relative;
     right: 2%;
    /* border: 5px solid purple !important;*/
-    height: 600px;
+    height: 100%;
     width: 1900px !important;
     overflow: scroll;
 }
